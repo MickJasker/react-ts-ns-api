@@ -44,7 +44,7 @@ export default class DepartureTimes extends React.Component<Props, State> {
         <form onSubmit={this.getDepartureTimes}>
           <label>
             Station:
-            <input type="text" name="name" onChange={this.handleChange} />
+            <input type="text" name="station" onChange={this.handleChange} />
             <button>Laad data</button>
           </label>
         </form>

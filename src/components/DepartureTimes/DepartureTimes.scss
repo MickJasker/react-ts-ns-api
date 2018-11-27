@@ -49,6 +49,8 @@
 
   ul {
     padding: 0;
+    max-height: 600px;
+    overflow: auto;
 
     li {
       box-shadow: 0 10px 20px rgba($color: #000000, $alpha: 0.2);

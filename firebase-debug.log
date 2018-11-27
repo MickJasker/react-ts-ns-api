@@ -1,0 +1,34 @@
+[debug] [2018-11-27T17:26:50.857Z] ----------------------------------------------------------------------
+[debug] [2018-11-27T17:26:50.859Z] Command:       /usr/local/bin/node /usr/local/npm_packages/bin/firebase serve
+[debug] [2018-11-27T17:26:50.859Z] CLI Version:   6.1.1
+[debug] [2018-11-27T17:26:50.859Z] Platform:      darwin
+[debug] [2018-11-27T17:26:50.859Z] Node Version:  v10.13.0
+[debug] [2018-11-27T17:26:50.860Z] Time:          Tue Nov 27 2018 18:26:50 GMT+0100 (Central European Standard Time)
+[debug] [2018-11-27T17:26:50.860Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-27T17:26:50.868Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-27T17:26:50.869Z] > authorizing via signed-in user
+[debug] [2018-11-27T17:26:50.869Z] [iam] checking project ns-app-666fc for permissions ["firebase.projects.get"]
+[debug] [2018-11-27T17:26:50.871Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ns-app-666fc:testIamPermissions  
+
+[debug] [2018-11-27T17:26:51.707Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-27T17:26:51.708Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/ns-app-666fc  
+ 
+[debug] [2018-11-27T17:26:52.443Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Applications/XAMPP/xamppfiles/htdocs/ns-api'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-11-27T17:26:52.840Z] Fetching environment
+[debug] [2018-11-27T17:26:52.842Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/956482579109:getServerAppConfig  
+ 
+[debug] [2018-11-27T17:26:52.842Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/956482579109/clients/_:getWebAppConfig  
+ 
+[debug] [2018-11-27T17:26:53.055Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-27T17:26:53.056Z] Starting @google-cloud/functions-emulator
+[debug] [2018-11-27T17:26:53.170Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: build
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2018-11-27T17:26:54.114Z] Parsing function triggers
+[info] ✔  functions: routePlanner: http://localhost:5001/ns-app-666fc/us-central1/routePlanner
+[info] ✔  functions: departureTimes: http://localhost:5001/ns-app-666fc/us-central1/departureTimes
