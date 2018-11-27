@@ -1,6 +1,7 @@
 import * as React from 'react';
 import DepartureTimes from '../DepartureTimes';
 import './Main.scss';
+import RoutePlanner from '../RoutePlanner';
 
 export interface Props {
   children?: React.ReactNode;
@@ -18,6 +19,7 @@ export default class Main extends React.Component<Props, State> {
   render() {
     return (
       <main>
+        <RoutePlanner />
         <DepartureTimes />
       </main>
     );
