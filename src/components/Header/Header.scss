@@ -1,7 +1,8 @@
+@import '../../assets/var';
 header {
   width: calc(100% - 20px);
-  background: black;
-  color: white;
+  background: $black;
+  color: $white;
   padding: 10px;
   * {
     margin: 0;

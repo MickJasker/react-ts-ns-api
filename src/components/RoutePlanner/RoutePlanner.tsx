@@ -8,16 +8,16 @@ export interface Props {
 }
 
 export interface State {
-  fromStation: string;
-  toStation: string;
+  fromStation: String;
+  toStation: String;
   advices: Array<Element>;
 }
 
 interface JourneyAdvice {
-  AantalOverstappen: number;
-  GeplandeReisTijd: string;
-  ActueleReisTijd: string;
-  Optimaal: boolean;
+  AantalOverstappen: Number;
+  GeplandeReisTijd: String;
+  ActueleReisTijd: String;
+  Optimaal: Boolean;
   GeplandeVertrekTijd: Date;
   ActueleVertrekTijd: Date;
   GeplandeAankomstTijd: Date;
@@ -27,7 +27,7 @@ interface JourneyAdvice {
 }
 
 interface TravelPart {
-  VervoerType: string;
+  VervoerType: String;
   RitNummer: number;
 }
 
@@ -49,7 +49,7 @@ export default class RoutePlanner extends React.Component<Props, State> {
 
   public render() {
     return (
-      <section className="route-planner departure-times">
+      <section className="route-planner card">
         <h2>Reisplanner</h2>
         <form onSubmit={this.planJourney}>
           <label>
