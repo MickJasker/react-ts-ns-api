@@ -1,7 +1,7 @@
 header {
   width: calc(100% - 20px);
-  background: black;
-  color: white;
+  background: $primary;
+  color: $white;
   padding: 10px;
   * {
     margin: 0;

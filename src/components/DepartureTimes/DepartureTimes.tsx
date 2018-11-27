@@ -72,11 +72,11 @@ export default class DepartureTimes extends React.Component<Props, State> {
           <li key={dep.RitNummer}>
             <h2 className="dest">{dep.EindBestemming}</h2>
             <h5 className="trainType">{dep.TreinSoort}</h5>
-            <h5 className="trans">{dep.Vervoerder}</h5>
-            <h4 className="time">{moment(dep.VertrekTijd).format('H:mm')}</h4>
+            <h2 className="trans">{dep.Vervoerder}</h2>
+            <h2 className="time">{moment(dep.VertrekTijd).format('H:mm')}</h2>
             <h5 className="routeInfo">{dep.RouteTekst}</h5>
             <h2 className="spoor">{dep.VertrekSpoor}</h2>
-            <h6 className="note">{dep.ReisTip}</h6>
+            <h5 className="note">{dep.ReisTip}</h5>
           </li>
         ));
         this.setState({
