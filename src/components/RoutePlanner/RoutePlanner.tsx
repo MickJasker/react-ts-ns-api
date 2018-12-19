@@ -2,6 +2,7 @@ import * as React from 'react';
 import axios from 'axios';
 import './RoutePlanner.scss';
 import * as moment from 'moment';
+import RoutePlannerTravelPart from '../RoutePlannerTravelPart';
 
 export interface Props {
   children?: React.ReactNode;
@@ -23,12 +24,6 @@ interface JourneyAdvice {
   GeplandeAankomstTijd: Date;
   ActueleAankomstTijd: Date;
   Status: string;
-  ReisDeel: Array<TravelPart>;
-}
-
-interface TravelPart {
-  VervoerType: String;
-  RitNummer: number;
 }
 
 export default class RoutePlanner extends React.Component<Props, State> {
@@ -64,6 +59,12 @@ export default class RoutePlanner extends React.Component<Props, State> {
             <button type="submit">Plan je reis</button>
           </label>
         </form>
+        <div className="tabelVal">
+          <h5>Reistijd</h5>
+          <h5>Aantal overstappen</h5>
+          <h5>Vertrektijd</h5>
+        </div>
+
         <ul>{this.state.advices}</ul>
       </section>
     );
@@ -88,27 +89,20 @@ export default class RoutePlanner extends React.Component<Props, State> {
         from: this.state.fromStation,
         to: this.state.toStation
       }
-    })
-      .then(response => {
-        const advices = response.data.map((advice: JourneyAdvice) => (
-          <li key={moment(advice.ActueleAankomstTijd).unix()}>
-            <h2 className="dest">{advice.ActueleReisTijd}</h2>
-            <h5 className="trainType">{advice.AantalOverstappen}</h5>
-            <h4 className="time">
-              {moment(advice.ActueleVertrekTijd).format('H:mm')}
-            </h4>
-            <ul>
-              {advice.ReisDeel.map((travelPart: TravelPart) => (
-                <li key={travelPart.RitNummer}>
-                  <h5>{travelPart.VervoerType}</h5>
-                </li>
-              ))}
-            </ul>
-          </li>
-        ));
-        this.setState({
-          advices: advices
-        });
+    }).then(response => {
+      const advices = response.data.map((advice: JourneyAdvice) => (
+        <li key={moment(advice.ActueleAankomstTijd).unix()}>
+          <h2 className="dest">{advice.ActueleReisTijd}</h2>
+          <h5 className="trainType">{advice.AantalOverstappen}</h5>
+          <h4 className="time">
+            {moment(advice.ActueleVertrekTijd).format('H:mm')}
+          </h4>
+          <RoutePlannerTravelPart />
+        </li>
+      ));
+      this.setState({
+        advices: advices
       });
+    });
   }
 }

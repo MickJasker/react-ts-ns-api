@@ -1,0 +1,28 @@
+@import '../../assets/var';
+
+.route-planner {
+  .tabelVal {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+
+      * {
+        margin: 0;
+      }
+
+      &:hover {
+        background: $white;
+      }
+    }
+  }
+}
