@@ -22,4 +22,39 @@ exports.departureTimes = functions.https.onRequest((req, res) => {
         });
     });
 });
+exports.routePlanner = functions.https.onRequest((req, res) => {
+    cors(req, res, () => {
+        const params = {
+            fromStation: req.body.from,
+            toStation: req.body.to
+        };
+        ns.reisadvies(params, (err, data) => {
+            if (data) {
+                res.status(200).send(data);
+                // console.log(data);
+            }
+            else {
+                res.status(400).send(err);
+                // console.log(err.api.message);
+            }
+        });
+    });
+});
+exports.malfunctions = functions.https.onRequest((req, res) => {
+    cors(req, res, () => {
+        const params = {
+            actual: true
+        };
+        ns.storingen(params, (err, data) => {
+            if (data) {
+                res.status(200).send(data);
+                // console.log(data);
+            }
+            else {
+                res.status(400).send(err);
+                // console.log(err.api.message);
+            }
+        });
+    });
+});
 //# sourceMappingURL=index.js.map
