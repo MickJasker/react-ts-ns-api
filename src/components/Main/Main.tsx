@@ -20,6 +20,7 @@ export default class Main extends React.Component<Props, State> {
   render() {
     return (
       <main>
+        <RoutePlanner />
         <DepartureTimes />
         <MalfunctionsMaintenance />
       </main>

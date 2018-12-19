@@ -39,13 +39,13 @@ export default class DepartureTimes extends React.Component<Props, State> {
 
   public render() {
     return (
-      <section className="departure-times">
+      <section className="departure-times card">
         <h2>Vertrektijden</h2>
         <form onSubmit={this.getDepartureTimes}>
           <label>
             Station:
-            <input type="text" name="name" onChange={this.handleChange} />
-            <button>Laad data</button>
+            <input type="text" name="station" onChange={this.handleChange} />
+            <button type="submit">Laad data</button>
           </label>
         </form>
         <h5>{this.state.error}</h5>
